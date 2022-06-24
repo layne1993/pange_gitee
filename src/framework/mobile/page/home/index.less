@@ -3,11 +3,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 0.88rem;
+  height:0.88rem;
   border-bottom: 1px solid rgba(255, 255, 255, .15);
+  z-index: 999;
 }
+
 .logo-bar {
-  height: 0.88rem;
+  height:0.88rem;
   padding-left: 0.33rem;
   // backdrop-filter: saturate(180%) blur(20px);
   // background-color: rgba(255, 255, 255, .72);
@@ -16,7 +18,7 @@
   align-items: center;
 
   .logo {
-    height: 0.88rem;
+    height:0.88rem;
     display: flex;
     align-items: center;
     img {
@@ -29,6 +31,22 @@
       font-family: PingFang SC;
       font-weight: bold;
       color: #fff;
+    }
+  }
+}
+
+.logo-fixed {
+  border-bottom-color: rgba(0,0,0,0.16);
+  .logo-bar {
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(255, 255, 255, .6);
+    transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    transition-property: background-color, backdrop-filter;
+    .logo {
+      span {
+        color: #000;
+        transition: color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+      }
     }
   }
 }
@@ -190,6 +208,37 @@
   .video-wrap {
     width: 100%;
     height: 6.64rem;
+    background: #000;
+    position: relative;
+    .control-icon {
+      position: absolute;
+      right: 0.2rem;
+      bottom: 0.2rem;
+      width: 0.66rem;
+      height: 0.66rem;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .playIcon {
+      background: url('../../../../../static/icons/play.svg') rgba(255, 255, 255, 0.25);
+      background-repeat:  no-repeat;
+      background-position: 60% center;
+      &:hover {
+        background: url('../../../../../static/icons/play.svg') rgba(255, 255, 255, 0.5);
+        background-repeat:  no-repeat;
+        background-position: 60% center;
+      }
+    }
+    .pauseIcon {
+      background: url('../../../../../static/icons/pause.svg')  rgba(255, 255, 255, 0.25);
+      background-repeat:  no-repeat;
+      background-position:  center center;
+      &:hover {
+        background: url('../../../../../static/icons/pause.svg')  rgba(255, 255, 255, 0.5);
+        background-repeat:  no-repeat;
+        background-position:  center center;
+      }
+    }
   }
 }
 
@@ -404,16 +453,16 @@
       margin-bottom: 0.6rem;
     }
     .tip-sign {
-      padding: 0 0.56rem;
+      padding: 0 0.56rem 0 0.16rem;
       .tip-sign-wrap {
         display: flex;
         justify-content: space-between;
       }
       .sign-item {
-        width: 1.42rem;
+        width: 2.25rem;
         display: flex;
         flex-direction: column;
-        text-align: center;
+        align-items: center;
         img {
           width: 1.42rem;
           height: 1.42rem;

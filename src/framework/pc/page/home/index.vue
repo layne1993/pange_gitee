@@ -1,10 +1,14 @@
 <template>
   <div class="home-container">
-    <div class="logo-content">
+    <div :class="`${showLogoBarClass ? 'logo-fixed' : ''} logo-content`">
       <div class="logo-bar">
         <div class="logo">
           <img
-            :src="require('../../../../../static/icons/logo_s.svg')"
+            :src="
+              showLogoBarClass
+                ? require('../../../../../static/icons/logo_s_black.svg')
+                : require('../../../../../static/icons/logo_s.svg')
+            "
             alt="logo"
             width="100%"
           />
@@ -20,6 +24,7 @@
         :src="require('../../../../../static/icons/logo_b.svg')"
         alt="logo"
         width="100%"
+        class="top-img"
       />
       <span class="top-3">磐阁系统</span>
     </div>
@@ -70,67 +75,90 @@
       </div>
     </div>
     <div class="body-content">
-      <div class="body-item">
+      <div class="body-item body-content1">
         <img
           :src="require('../../../../../static/icons/body1.svg')"
           alt="body1"
           width="100%"
+          class="body-content-img1"
         />
-        <span class="body-title">数字孪生·数字赋能</span>
-        <span class="body-tip">BIM技术赋能建筑运营管理</span>
+        <span class="body-title body-title1">数字孪生·数字赋能</span>
+        <span class="body-tip body-tip1">BIM技术赋能建筑运营管理</span>
       </div>
-      <div class="body-item">
+      <div class="body-item body-content2">
         <img
           :src="require('../../../../../static/icons/body2.svg')"
           alt="body2"
           width="100%"
+          class="body-content-img2"
         />
-        <span class="body-title">物联网</span>
-        <span class="body-tip">建筑区域精细化管控</span>
+        <span class="body-title body-title2">物联网</span>
+        <span class="body-tip body-tip2">建筑区域精细化管控</span>
       </div>
-      <div class="body-item">
+      <div class="body-item body-content3">
         <img
           :src="require('../../../../../static/icons/body3.svg')"
           alt="body3"
           width="100%"
+          class="body-content-img3"
         />
-        <span class="body-title">移动互联网</span>
-        <span class="body-tip">运营数据，尽在“掌”握</span>
+        <span class="body-title body-title3">移动互联网</span>
+        <span class="body-tip body-tip3">运营数据，尽在“掌”握</span>
       </div>
-      <div class="body-item">
+      <div class="body-item body-content4">
         <img
           :src="require('../../../../../static/icons/body4.svg')"
           alt="body4"
           width="100%"
+          class="body-content-img4"
         />
-        <span class="body-title">人工智能</span>
-        <span class="body-tip">AI运营报表，为物业运营保驾护航</span>
+        <span class="body-title body-title4">人工智能</span>
+        <span class="body-tip body-tip4">AI运营报表，为物业运营保驾护航</span>
       </div>
-      <div class="body-item">
+      <div class="body-item body-content5">
         <img
           :src="require('../../../../../static/icons/body5.svg')"
           alt="body5"
           width="100%"
+          class="body-content-img5"
         />
-        <span class="body-title">SaaS服务模式</span>
-        <span class="body-tip">零建设成本，SaaS服务费低至0.01元/平</span>
+        <span class="body-title body-title5">SaaS服务模式</span>
+        <span class="body-tip body-tip5"
+          >零建设成本，SaaS服务费低至0.01元/平</span
+        >
       </div>
     </div>
     <div class="video-content">
       <div class="video-top">
         <span class="video-title">数字孪生·数字赋能</span>
         <div class="video-right">
-          <span>建筑空间、设备、管理工单数字化</span>
-          <span>物业管理全生命周期可视化的核心基础</span>
+          <span class="video-right1">建筑空间、设备、管理工单数字化</span>
+          <span class="video-right2">物业管理全生命周期可视化的核心基础</span>
         </div>
       </div>
-      <div class="video-wrap">video</div>
+      <div class="video-wrap" id="video">
+        <video
+          id="myVideo"
+          class="video-js vjs-default-skin"
+          width="100%"
+          height="100%"
+        >
+          <source
+            :src="require('../../../../../static/video1.mp4')"
+            type="video/mp4"
+          />
+        </video>
+        <span
+          :class="`${isPlay ? 'pauseIcon' : 'playIcon'} control-icon`"
+          @click="handleClickIcon"
+        ></span>
+      </div>
     </div>
     <div class="fund-content">
       <span class="fund-title">智能报表·人工智能</span>
       <div class="fund-tip">
-        <span>基于运营大数据，动态智能算法出报表</span>
-        <span>根据需求自定义报表权限及类型</span>
+        <span class="fund-tip1">基于运营大数据，动态智能算法出报表</span>
+        <span class="fund-tip2">根据需求自定义报表权限及类型</span>
       </div>
       <div class="fund-imgs">
         <div class="fund-img1" />
@@ -143,8 +171,8 @@
       <div class="warning-title">
         <span class="title">移动互联网· 实时“掌”握</span>
         <div class="warning-tip">
-          <span>移动端&桌面&大屏同步展示</span>
-          <span>实时推送各类进度&报警</span>
+          <span class="warning-tip1">移动端&桌面&大屏同步展示</span>
+          <span class="warning-tip2">实时推送各类进度&报警</span>
         </div>
       </div>
       <div class="warning-phone" />
@@ -154,8 +182,8 @@
       <div class="hand-left">
         <span class="left-title">物联⽹加持·精准管控</span>
         <div class="left-tip">
-          <span>确保100%到达现场操作</span>
-          <span>巡检/安保路线可视化</span>
+          <span class="left-tip1">确保100%到达现场操作</span>
+          <span class="left-tip2">巡检/安保路线可视化</span>
         </div>
       </div>
       <div class="hand-middle" />
@@ -165,13 +193,13 @@
     <div class="tip-container">
       <div class="tip-top">
         <div class="tip-top-left">
-          <span class="title">易上⼿·易培训</span>
+          <span class="title tip-title">易上⼿·易培训</span>
           <div class="second">
             <span style="color: #00b777">⽆须安装APP</span>
             <span>，轻松适⽤⼤型物业团队</span>
           </div>
           <div class="tip-sign">
-            <div class="sign-item">
+            <div class="sign-item tip-sign-img1">
               <img
                 :src="require('../../../../../static/icons/tip1.svg')"
                 alt="tip1"
@@ -179,7 +207,7 @@
               />
               <span>小程序</span>
             </div>
-            <div class="sign-item">
+            <div class="sign-item tip-sign-img2">
               <img
                 :src="require('../../../../../static/icons/tip2.svg')"
                 alt="tip2"
@@ -187,7 +215,7 @@
               />
               <span>企业微信</span>
             </div>
-            <div class="sign-item">
+            <div class="sign-item tip-sign-img3">
               <img
                 :src="require('../../../../../static/icons/tip3.svg')"
                 alt="tip3"
@@ -210,7 +238,7 @@
             </p>
             <p class="right-fouth">户外适⽤，IP67防尘防⽔</p>
           </div>
-          <div class="top-right" />
+          <div class="top-right tip-sign-img4" />
         </div>
       </div>
       <div class="tip-middle">
@@ -243,8 +271,9 @@
             :src="require('../../../../../static/images/friend_1.png')"
             alt="friend_1"
             width="100%"
+            class="bottom-item-img"
           />
-          <div class="bottom-tip">
+          <div class="bottom-tip bottom-item-tip">
             <span>
               明华物业是中国物业⾏业的标志性企业，“公众物业”的先驱者，是世界500强的优秀服务供应商。明华旗下众多的标志性项⽬的运营经验，是整个⾏业宝贵的资源。
             </span>
@@ -258,8 +287,9 @@
             :src="require('../../../../../static/images/friend_2.png')"
             alt="friend_2"
             width="100%"
+            class="bottom-item-img"
           />
-          <div class="bottom-tip">
+          <div class="bottom-tip bottom-item-tip">
             <span>
               上海建科集团，作为全国最早的BIM技术研究与应用单位之一，将BIM技术与绿色建筑、既有建筑改造与城市更新、项目管理、运维管理、智慧城市咨询等主营业务紧密融合，形成项目全生命期的系统化解决方案，为城市精细化管理和安全运行提供一流的智力服务。
             </span>
@@ -273,8 +303,9 @@
             :src="require('../../../../../static/images/friend_3.png')"
             alt="friend_3"
             width="100%"
+            class="bottom-item-img"
           />
-          <div class="bottom-tip">
+          <div class="bottom-tip bottom-item-tip">
             <span>
               华建集团（前身为上海现代建筑设计集团）是建筑业界综合实力最强的建筑工程设计咨询公司，标志性的建筑案例遍布全国各地，最具代表性的上海陆家嘴三栋超高层建筑-上海中心、金茂大厦、环球金融中心均是其参与设计与建造的作品。
             </span>
@@ -295,36 +326,40 @@
               :src="require('../../../../../static/images/cus_1.png')"
               alt="cus_1"
               width="100%"
+              class="cus-item-img1"
             />
-            <span class="item-title">黄浦区区政府</span>
-            <span class="item-tip">机关/办公楼</span>
+            <span class="item-title cus-item-titl1">黄浦区区政府</span>
+            <span class="item-tip cus-item-tip1">机关/办公楼</span>
           </div>
           <div class="cus-item">
             <img
               :src="require('../../../../../static/images/cus_2.png')"
               alt="cus_2"
               width="100%"
+              class="cus-item-img1"
             />
-            <span class="item-title">上海天文馆</span>
-            <span class="item-tip">展览</span>
+            <span class="item-title cus-item-titl1">上海天文馆</span>
+            <span class="item-tip cus-item-tip1">展览</span>
           </div>
           <div class="cus-item">
             <img
               :src="require('../../../../../static/images/cus_3.png')"
               alt="cus_3"
               width="100%"
+              class="cus-item-img1"
             />
-            <span class="item-title">上海F1赛车场</span>
-            <span class="item-tip">体育场馆</span>
+            <span class="item-title cus-item-titl1">上海F1赛车场</span>
+            <span class="item-tip cus-item-tip1">体育场馆</span>
           </div>
           <div class="cus-item">
             <img
               :src="require('../../../../../static/images/cus_4.png')"
               alt="cus_4"
               width="100%"
+              class="cus-item-img1"
             />
-            <span class="item-title">上海交响乐团音乐厅</span>
-            <span class="item-tip">文化场馆</span>
+            <span class="item-title cus-item-titl1">上海交响乐团音乐厅</span>
+            <span class="item-tip cus-item-tip1">文化场馆</span>
           </div>
         </div>
         <div class="cus-wrap">
@@ -333,36 +368,40 @@
               :src="require('../../../../../static/images/cus_5.png')"
               alt="cus_5"
               width="100%"
+              class="cus-item-img2"
             />
-            <span class="item-title">上海交大</span>
-            <span class="item-tip">学校</span>
+            <span class="item-title cus-item-titl2">上海交大</span>
+            <span class="item-tip cus-item-tip2">学校</span>
           </div>
           <div class="cus-item">
             <img
               :src="require('../../../../../static/images/cus_6.png')"
               alt="cus_6"
               width="100%"
+              class="cus-item-img2"
             />
-            <span class="item-title">临港蓝湾天地</span>
-            <span class="item-tip">商业/综合体</span>
+            <span class="item-title cus-item-titl2">临港蓝湾天地</span>
+            <span class="item-tip cus-item-tip2">商业/综合体</span>
           </div>
           <div class="cus-item">
             <img
               :src="require('../../../../../static/images/cus_7.png')"
               alt="cus_7"
               width="100%"
+              class="cus-item-img2"
             />
-            <span class="item-title">临港生命科技园</span>
-            <span class="item-tip">厂房/办公楼</span>
+            <span class="item-title cus-item-titl2">临港生命科技园</span>
+            <span class="item-tip cus-item-tip2">厂房/办公楼</span>
           </div>
           <div class="cus-item">
             <img
               :src="require('../../../../../static/images/cus_8.png')"
               alt="cus_8"
               width="100%"
+              class="cus-item-img2"
             />
-            <span class="item-title">华住集团</span>
-            <span class="item-tip">酒店</span>
+            <span class="item-title cus-item-titl2">华住集团</span>
+            <span class="item-tip cus-item-tip2">酒店</span>
           </div>
         </div>
       </div>
@@ -382,8 +421,314 @@
 </template>
 
 <script>
+import videojs from "video.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
-  name: "HomeView"
+  name: "HomeView",
+  data() {
+    return {
+      player: null,
+      showLogoBarClass: false,
+      isPlay: true
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll, true);
+    this.initVideo();
+    this.gaspAnimation();
+  },
+  methods: {
+    handleScroll(e) {
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop <= 90) {
+        this.showLogoBarClass = false;
+      } else {
+        this.showLogoBarClass = true;
+      }
+      // const videoDom = document.getElementById("video");
+      // if (this.isContain(videoDom)) {
+      //   console.info("video进入");
+      //   this.isPlay = true;
+      // } else {
+      //   console.info("video退出");
+      //   this.isPlay = false;
+      // }
+    },
+    initVideo() {
+      const videoDom = document.getElementById("video");
+      const domWidth = videoDom.clientWidth;
+      const domHeight = videoDom.clientHeight;
+      this.player = videojs(
+        "myVideo",
+        {
+          muted: true,
+          loop: true,
+          autoPlay: true,
+          width: domWidth,
+          height: domHeight,
+          controls: false,
+          preload: "auto",
+          textTrackDisplay: false,
+          posterImage: false,
+          errorDisplay: false
+        },
+        () => {
+          this.player.play();
+        }
+      );
+    },
+    handleClickIcon() {
+      if (!this.player) {
+        console.info("播放器出错");
+        return;
+      }
+      if (this.isPlay) {
+        this.player.pause();
+      } else {
+        this.player.play();
+      }
+      this.isPlay = !this.isPlay;
+    },
+    gaspAnimation() {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".top"
+          },
+          opacity: 0
+        })
+        .from(".top-1", { y: innerHeight * 1 })
+        .from(".top-2", { y: innerHeight * 1 })
+        .from(".top-img", { y: innerHeight * 1 })
+        .from(".top-3", { y: innerHeight * 1 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".header"
+          },
+          scrub: true,
+          pin: true,
+          duration: 0.4,
+          opacity: 0
+        })
+        .from(".header-1", { opacity: 0 })
+        .from(".header-2", { opacity: 0 })
+        .from(".desc-content", { opacity: 0, y: innerHeight * 1 }, "+=0.5");
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".body-content1"
+          },
+          scrub: true,
+          pin: true,
+          duration: 0.6,
+          opacity: 0
+        })
+        .from(".body-content-img1", { opacity: 0, y: innerHeight * 1 })
+        .from(".body-title1", { opacity: 0, y: innerHeight * 1 })
+        .from(".body-tip1", { opacity: 0, y: innerHeight * 1 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".body-content2"
+          },
+          scrub: true,
+          pin: true,
+          duration: 0.8,
+          opacity: 0
+        })
+        .from(".body-content-img2", { opacity: 0, y: innerHeight * 1 })
+        .from(".body-title2", { opacity: 0, y: innerHeight * 1 })
+        .from(".body-tip2", { opacity: 0, y: innerHeight * 1 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".body-content3"
+          },
+          scrub: true,
+          pin: true,
+          duration: 1,
+          opacity: 0
+        })
+        .from(".body-content-img3", { opacity: 0, y: innerHeight * 1 })
+        .from(".body-title3", { opacity: 0, y: innerHeight * 1 })
+        .from(".body-tip3", { opacity: 0, y: innerHeight * 1 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".body-content4"
+          },
+          scrub: true,
+          pin: true,
+          duration: 1.2,
+          opacity: 0
+        })
+        .from(".body-content-img4", { opacity: 0, y: innerHeight * 1 })
+        .from(".body-title4", { opacity: 0, y: innerHeight * 1 })
+        .from(".body-tip4", { opacity: 0, y: innerHeight * 1 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".body-content5"
+          },
+          scrub: true,
+          pin: true,
+          duration: 1.4,
+          opacity: 0
+        })
+        .from(".body-content-img5", { opacity: 0, y: innerHeight * 1 })
+        .from(".body-title5", { opacity: 0, y: innerHeight * 1 })
+        .from(".body-tip5", { opacity: 0, y: innerHeight * 1 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".video-content"
+          },
+          scrub: true,
+          pin: true,
+          duration: 1.6,
+          opacity: 0
+        })
+        .from(".video-title", { opacity: 0, y: innerHeight * 1 })
+        .from(".video-right1", { opacity: 0, y: innerHeight * 1 })
+        .from(".video-right2", { opacity: 0, y: innerHeight * 1 })
+        .from(".video-wrap", { opacity: 0, y: innerHeight * 1 }, "+=0.5");
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".fund-content"
+          },
+          scrub: true,
+          pin: true,
+          duration: 1.8,
+          opacity: 0
+        })
+        .from(".fund-title", { opacity: 0, y: innerHeight * 1 })
+        .from(".fund-tip1", { opacity: 0, y: innerHeight * 1 })
+        .from(".fund-tip2", { opacity: 0, y: innerHeight * 1 })
+        .from(".fund-img1", { opacity: 0, y: innerHeight * 1 })
+        .from(".fund-img2", { opacity: 0, y: innerHeight * 1 })
+        .from(".fund-img3", { opacity: 0, y: innerHeight * 1 })
+        .from(".fund-img4", { opacity: 0, y: innerHeight * 1 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".fund-warning"
+          },
+          scrub: true,
+          pin: true,
+          duration: 2,
+          opacity: 0
+        })
+        .from(".warning-title", { opacity: 0, y: innerHeight * 1 })
+        .from(".warning-tip1", { opacity: 0, y: innerHeight * 1 })
+        .from(".warning-tip2", { opacity: 0, y: innerHeight * 1 })
+        .from(".warning-phone", { opacity: 0, y: innerHeight * 1 })
+        .from(".warning-pc", { opacity: 0, y: innerHeight * 1 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".hand-content"
+          },
+          scrub: true,
+          pin: true,
+          duration: 2.2,
+          opacity: 0
+        })
+        .from(".left-title", { opacity: 0, y: innerHeight * 1 })
+        .from(".left-tip1", { opacity: 0, y: innerHeight * 1 })
+        .from(".left-tip2", { opacity: 0, y: innerHeight * 1 })
+        .from(".hand-middle", { opacity: 0, y: innerHeight * 1 })
+        .from(".hand-wifi", { opacity: 0, y: innerHeight * 1 })
+        .from(".hand-right", { opacity: 0, y: innerHeight * 1 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".tip-container"
+          },
+          scrub: true,
+          pin: true,
+          duration: 2.2,
+          opacity: 0
+        })
+        .from(".tip-top-left", { opacity: 0, y: innerHeight * 1 })
+        .from(".tip-top-right", { opacity: 0, y: innerHeight * 1 })
+        .from(".tip-sign-img1", { opacity: 0, y: innerHeight * 1 })
+        .from(".tip-sign-img2", { opacity: 0, y: innerHeight * 1 })
+        .from(".tip-sign-img3", { opacity: 0, y: innerHeight * 1 })
+        .from(".tip-sign-img4", { opacity: 0, y: innerHeight * 1 })
+        .from(".tip-middle", { opacity: 0, y: innerHeight * 1 })
+        .from(".middle-title", { opacity: 0, y: innerHeight * 1 })
+        .from(".middle-tip", { opacity: 0, y: innerHeight * 1 })
+        .from(".middle-service", { opacity: 0, y: innerHeight * 1 })
+        .from(".middle-bottom", { opacity: 0, y: innerHeight * 1 })
+        .from(".tip-word", { opacity: 0, y: innerHeight * 1 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".tip-bottom"
+          },
+          scrub: true,
+          pin: true,
+          duration: 1,
+          opacity: 0
+        })
+        .from(".bottom-item-img", { opacity: 0, y: innerHeight * 1 })
+        .from(".bottom-item-tip", { opacity: 0, y: innerHeight * 1 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".cus-container"
+          },
+          scrub: true,
+          pin: true,
+          duration: 1.5,
+          opacity: 0
+        })
+        .from(".cus-title", { opacity: 0, y: innerHeight * 1 })
+        .from(".cus-tip", { opacity: 0, y: innerHeight * 1 })
+        .from(".cus-item-img1", { opacity: 0, y: innerHeight * 1 })
+        .from(".cus-item-titl1", { opacity: 0, y: innerHeight * 1 })
+        .from(".cus-item-tip1", { opacity: 0, y: innerHeight * 1 })
+        .from(".cus-item-img2", { opacity: 0, y: innerHeight * 1 })
+        .from(".cus-item-titl2", { opacity: 0, y: innerHeight * 1 })
+        .from(".cus-item-tip2", { opacity: 0, y: innerHeight * 1 });
+    },
+    isContain(dom) {
+      // 获取可视窗口的盖度。
+      const screenHeight =
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight;
+      // 获取滚动条滚动的高度
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      // 获取元素偏移的高度。就是距离可视窗口的偏移量。
+      const offsetTop = dom.offsetTop;
+      const domHeight = dom.clientHeight;
+      console.info(
+        offsetTop - scrollTop,
+        screenHeight,
+        domHeight,
+        "screenHeightscreenHeight"
+      );
+      return (
+        offsetTop - scrollTop < screenHeight &&
+        offsetTop - scrollTop > domHeight * -1
+      );
+    }
+  },
+  beforeDestroy() {
+    if (this.player) {
+      this.player.dispose();
+    }
+    window.removeEventListener("scroll", this.handleScroll, true);
+  }
 };
 </script>
 

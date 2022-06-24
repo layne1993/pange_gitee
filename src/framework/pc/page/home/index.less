@@ -3,26 +3,25 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 0.93rem;
+  height: 90px;
   border-bottom: 1px solid rgba(255, 255, 255, .15);
+  z-index: 999;
 }
 .logo-bar {
-  height: 0.93rem;
+  height: 90px;
   padding: 0 0.67rem 0 0.76rem;
-  // backdrop-filter: saturate(180%) blur(20px);
-  // background-color: rgba(255, 255, 255, .72);
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   .logo {
-    height: 0.93rem;
+    height: 90px;
     display: flex;
     align-items: center;
     img {
-      width: 0.4rem;
-      height: 0.58rem;
-      margin-right: 0.16rem;
+      width: 40px;
+      height: 58px;
+      margin-right: 16px;
     }
     span {
       font-size: 0.28rem;
@@ -37,6 +36,26 @@
     font-family: PingFang SC;
     font-weight: bold;
     color: #fff;
+  }
+}
+.logo-fixed {
+  border-bottom-color: rgba(0,0,0,0.16);
+  .logo-bar {
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(255, 255, 255, .6);
+    transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    transition-property: background-color, backdrop-filter;
+    .logo {
+      span {
+        color: #000;
+        transition: color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+      }
+    }
+
+    .right-title {
+      color: #000;
+      transition: color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    }
   }
 }
 
@@ -203,6 +222,37 @@
   }
   .video-wrap {
     height: 8rem;
+    background: #000;
+    position: relative;
+    .control-icon {
+      position: absolute;
+      right: 0.2rem;
+      bottom: 0.2rem;
+      width: 0.44rem;
+      height: 0.44rem;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .playIcon {
+      background: url('../../../../../static/icons/play.svg') rgba(255, 255, 255, 0.25);
+      background-repeat:  no-repeat;
+      background-position: 60% center;
+      &:hover {
+        background: url('../../../../../static/icons/play.svg') rgba(255, 255, 255, 0.5);
+        background-repeat:  no-repeat;
+        background-position: 60% center;
+      }
+    }
+    .pauseIcon {
+      background: url('../../../../../static/icons/pause.svg')  rgba(255, 255, 255, 0.25);
+      background-repeat:  no-repeat;
+      background-position:  center center;
+      &:hover {
+        background: url('../../../../../static/icons/pause.svg')  rgba(255, 255, 255, 0.5);
+        background-repeat:  no-repeat;
+        background-position:  center center;
+      }
+    }
   }
 }
 
