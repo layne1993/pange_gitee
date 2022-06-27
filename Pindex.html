@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+    rel="preload"
+    as="font"
+    href="./fonts/ping-fang.ttf"
+    type="font/ttf"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+  <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="./css/demo.css" />
+  <!--引入test.less文件 -->
+  <link rel="stylesheet/less" type="text/css" href="./css/pc.less" />
+  <!--引入less.min.js文件 -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.8.1/less.min.js" ></script>
+  <style>
+    @font-face {
+      font-family: "PingFang SC";
+      font-weight: 400;
+      font-style: normal;
+      font-display: auto;
+      unicode-range: U+000-5FF;
+      src: url("/fonts/Roboto/ping-fang.ttf") format("ttf");
+    }
+    ::-webkit-scrollbar{
+      display:none;
+    }
+    .home-container {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="home-container">
+    <div class="logo-content">
+      <div class="logo-bar">
+        <div class="logo">
+          <img
+            src="./assets/icons/logo_s.svg"
+            alt="logo"
+            width="100%"
+          />
+          <span>磐阁</span>
+        </div>
+        <span class="right-title">我的项目</span>
+      </div>
+    </div>
+    <div class="top">
+      <span class="top-1" data-scroll="toggle(.scaleUpIn, .scaleUpOut)">政府机关·办公·商业·学校·医院·厂房</span>
+      <span class="top-2" data-scroll="toggle(.scaleUpIn, .scaleUpOut)">数字赋能·物业管理</span>
+      <img
+        src="./assets/icons/logo_b.svg"
+        alt="logo"
+        width="100%"
+        data-scroll="toggle(.fromBottomIn, .fromBottomOut)"
+      />
+      <span class="top-3" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">磐阁系统</span>
+    </div>
+    <div class="header">
+      <div class="header-imgs">
+        <div class="header-1" data-scroll="toggle(.fromBottomIn, .fromBottomOut)"></div>
+        <div class="header-2" data-scroll="toggle(.fromBottomIn, .fromBottomOut)"></div>
+      </div>
+      <div class="desc-content">
+        <div class="desc">
+          <div class="desc-left">
+            <div class="desc-item" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+              <img
+                src="./assets/icons/header_1.svg"
+                alt="jianzhu"
+                width="100%"
+              />
+              <span>建筑空间、设备、资料数字化</span>
+            </div>
+            <div class="desc-item" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+              <img
+                src="./assets/icons/header_3.svg"
+                alt="wuzhihua"
+                width="100%"
+              />
+              <span>全面无纸化，记录可追溯</span>
+            </div>
+          </div>
+          <div class="desc-right">
+            <div class="desc-item" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+              <img
+                src="./assets/icons/header_2.svg"
+                alt="ai"
+                width="100%"
+              />
+              <span>AI智能优化运营效率</span>
+            </div>
+            <div class="desc-item" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+              <img
+                src="./assets/icons/header_4.svg"
+                alt="saas"
+                width="100%"
+              />
+              <span>SaaS模式，低成本可持续运营</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="body-content">
+      <div class="body-item" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+        <img
+          src="./assets/icons/body1.svg"
+          alt="body1"
+          width="100%"
+        />
+        <span class="body-title">数字孪生·数字赋能</span>
+        <span class="body-tip">BIM技术赋能建筑运营管理</span>
+      </div>
+      <div class="body-item" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+        <img
+          src="./assets/icons/body2.svg"
+          alt="body2"
+          width="100%"
+        />
+        <span class="body-title">物联网</span>
+        <span class="body-tip">建筑区域精细化管控</span>
+      </div>
+      <div class="body-item" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+        <img
+          src="./assets/icons/body3.svg"
+          alt="body3"
+          width="100%"
+        />
+        <span class="body-title">移动互联网</span>
+        <span class="body-tip">运营数据，尽在“掌”握</span>
+      </div>
+      <div class="body-item" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+        <img
+          src="./assets/icons/body4.svg"
+          alt="body4"
+          width="100%"
+        />
+        <span class="body-title">人工智能</span>
+        <span class="body-tip">AI运营报表，为物业运营保驾护航</span>
+      </div>
+      <div class="body-item" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+        <img
+          src="./assets/icons/body5.svg"
+          alt="body5"
+          width="100%"
+        />
+        <span class="body-title">SaaS服务模式</span>
+        <span class="body-tip">零建设成本，SaaS服务费低至0.01元/平</span>
+      </div>
+    </div>
+    <div class="video-content">
+      <div class="video-top" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+        <span class="video-title">数字孪生·数字赋能</span>
+        <div class="video-right">
+          <span>建筑空间、设备、管理工单数字化</span>
+          <span>物业管理全生命周期可视化的核心基础</span>
+        </div>
+      </div>
+      <div class="video-wrap" id="video">
+        <video
+          id="myVideo"
+          class="video-js vjs-default-skin"
+          preload="auto"
+          width="100%"
+          height="100%"
+        >
+          <source
+            src="./assets/video1.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <span class="playIcon control-icon"></span>
+      </div>
+    </div>
+    <div class="fund-content">
+      <span class="fund-title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">智能报表·人工智能</span>
+      <div class="fund-tip" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+        <span>基于运营大数据，动态智能算法出报表</span>
+        <span>根据需求自定义报表权限及类型</span>
+      </div>
+      <div class="fund-imgs">
+        <div class="fund-img1" data-scroll="toggle(.fromLeftIn, .fromLeftOut)"></div>
+        <div class="fund-img2" data-scroll="toggle(.fromTopIn, .fromTopOut)"></div>
+        <div class="fund-img3" data-scroll="toggle(.fromBottomIn, .fromBottomOut)"></div>
+        <div class="fund-img4" data-scroll="toggle(.fromRightIn, .fromRightOut)"></div>
+      </div>
+    </div>
+    <div class="fund-warning">
+      <div class="warning-title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+        <span class="title">移动互联网· 实时“掌”握</span>
+        <div class="warning-tip">
+          <span>移动端&桌面&大屏同步展示</span>
+          <span>实时推送各类进度&报警</span>
+        </div>
+      </div>
+      <div class="warning-phone" data-scroll="toggle(.fromLeftIn, .fromLeftOut)"></div>
+      <div class="warning-pc" data-scroll="toggle(.fromRightIn, .fromRightOut)"></div>
+    </div>
+    <div class="hand-content">
+      <div class="hand-left" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+        <span class="left-title">物联⽹加持·精准管控</span>
+        <div class="left-tip">
+          <span>确保100%到达现场操作</span>
+          <span>巡检/安保路线可视化</span>
+        </div>
+      </div>
+      <div class="hand-middle" data-scroll="toggle(.fromLeftIn, .fromLeftOut)"></div>
+      <div class="hand-wifi" data-scroll="toggle(.fromTopIn, .fromTopOut)"></div>
+      <div class="hand-right" data-scroll="toggle(.fromRightIn, .fromRightOut)"></div>
+    </div>
+    <div class="tip-container">
+      <div class="tip-top">
+        <div class="tip-top-left" data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+          <span class="title">易上⼿·易培训</span>
+          <div class="second">
+            <span style="color: #00b777">⽆须安装APP</span>
+            <span>，轻松适⽤⼤型物业团队</span>
+          </div>
+          <div class="tip-sign">
+            <div class="sign-item">
+              <img
+                src="./assets/icons/tip1.svg"
+                alt="tip1"
+                width="100%"
+              />
+              <span>小程序</span>
+            </div>
+            <div class="sign-item">
+              <img
+                src="./assets/icons/tip2.svg"
+                alt="tip2"
+                width="100%"
+              />
+              <span>企业微信</span>
+            </div>
+            <div class="sign-item">
+              <img
+                src="./assets/icons/tip3.svg"
+                alt="tip3"
+                width="100%"
+              />
+              <span>B/S架构+HTML</span>
+            </div>
+          </div>
+        </div>
+        <div class="tip-top-right" data-scroll="toggle(.fromRightIn, .fromRightOut)">
+          <div class="top-left">
+            <span class="right-title">蓝牙信标</span>
+            <p class="right-second">
+              <span style="color: #00b777">低功耗</span>
+              <span>，电池耐⽤<span style="color: #00b777">5</span>年</span>
+            </p>
+            <p class="right-third">
+              <span style="color: #00b777">易安装</span>
+              <span>，螺丝/背胶固定安装</span>
+            </p>
+            <p class="right-fouth">户外适⽤，IP67防尘防⽔</p>
+          </div>
+          <div class="top-right"></div>
+        </div>
+      </div>
+      <div class="tip-middle" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+        <span class="middle-title">
+          SaaS服务·
+          <span style="color: #00b777; font-size: 0.48rem;">零</span>
+          建设成本
+        </span>
+        <span class="middle-tip">
+          <span style="color: #00b777; font-size: 0.48rem;">0</span>
+          硬件投⼊·
+          <span style="color: #00b777; font-size: 0.48rem;">0</span>
+          部署费⽤·
+          <span style="color: #00b777; font-size: 0.48rem;">0</span>
+          维护费⽤
+        </span>
+        <span class="middle-service">
+          SaaS服务费低⾄
+          <span style="color: #00b777">0.01</span>元/平
+        </span>
+        <div class="middle-bottom">
+          <span>计算您的SaaS服务费></span>
+          <span>什么是SaaS平台？></span>
+        </div>
+      </div>
+      <div class="tip-word" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">我们的合作伙伴&合作项目</div>
+      <div class="tip-bottom">
+        <div class="tip-item">
+          <img
+            src="./assets/images/friend_1.png"
+            alt="friend_1"
+            width="100%"
+            data-scroll="toggle(.fromBottomIn, .fromBottomOut)"
+          />
+          <div class="bottom-tip" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+            <span>
+              明华物业是中国物业⾏业的标志性企业，“公众物业”的先驱者，是世界500强的优秀服务供应商。明华旗下众多的标志性项⽬的运营经验，是整个⾏业宝贵的资源。
+            </span>
+            <span>
+              磐阁系统通过与明华多年来的战略合作，将众多宝贵的物业运营经验，转化为智能化技术成果，为明华物业进⼀步提⾼了管理效率、降低了运营成本。
+            </span>
+          </div>
+        </div>
+        <div class="tip-item">
+          <img
+            src="./assets/images/friend_2.png"
+            alt="friend_2"
+            width="100%"
+            data-scroll="toggle(.fromBottomIn, .fromBottomOut)"
+          />
+          <div class="bottom-tip" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+            <span>
+              上海建科集团，作为全国最早的BIM技术研究与应用单位之一，将BIM技术与绿色建筑、既有建筑改造与城市更新、项目管理、运维管理、智慧城市咨询等主营业务紧密融合，形成项目全生命期的系统化解决方案，为城市精细化管理和安全运行提供一流的智力服务。
+            </span>
+            <span>
+              建科的BIM技术与磐阁系统的深度合作，提升了建筑后期运营的智能化技术水平，使建筑运营可视化到达一个全新的高度。
+            </span>
+          </div>
+        </div>
+        <div class="tip-item">
+          <img
+            src="./assets/images/friend_3.png"
+            alt="friend_3"
+            width="100%"
+            data-scroll="toggle(.fromBottomIn, .fromBottomOut)"
+          />
+          <div class="bottom-tip" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+            <span>
+              华建集团（前身为上海现代建筑设计集团）是建筑业界综合实力最强的建筑工程设计咨询公司，标志性的建筑案例遍布全国各地，最具代表性的上海陆家嘴三栋超高层建筑-上海中心、金茂大厦、环球金融中心均是其参与设计与建造的作品。
+            </span>
+            <span>
+              磐阁的创新技术携手华建集团深厚的设计咨询经验以及建筑各专业领域专家，能够为业主创造更大的价值与更优质的服务。
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cus-container">
+      <span class="cus-title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">客户案例</span>
+      <span class="cus-tip" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">政府机关·学校·医院·商业办公·酒店·市政</span>
+      <div class="cus-content">
+        <div class="cus-wrap" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+          <div class="cus-item">
+            <img
+              src="./assets/images/cus_1.png"
+              alt="cus_1"
+              width="100%"
+            />
+            <span class="item-title">黄浦区区政府</span>
+            <span class="item-tip">机关/办公楼</span>
+          </div>
+          <div class="cus-item">
+            <img
+              src="./assets/images/cus_2.png"
+              alt="cus_2"
+              width="100%"
+            />
+            <span class="item-title">上海天文馆</span>
+            <span class="item-tip">展览</span>
+          </div>
+          <div class="cus-item">
+            <img
+              src="./assets/images/cus_3.png"
+              alt="cus_3"
+              width="100%"
+            />
+            <span class="item-title">上海F1赛车场</span>
+            <span class="item-tip">体育场馆</span>
+          </div>
+          <div class="cus-item">
+            <img
+              src="./assets/images/cus_4.png"
+              alt="cus_4"
+              width="100%"
+            />
+            <span class="item-title">上海交响乐团音乐厅</span>
+            <span class="item-tip">文化场馆</span>
+          </div>
+        </div>
+        <div class="cus-wrap" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+          <div class="cus-item">
+            <img
+              src="./assets/images/cus_5.png"
+              alt="cus_5"
+              width="100%"
+            />
+            <span class="item-title">上海交大</span>
+            <span class="item-tip">学校</span>
+          </div>
+          <div class="cus-item">
+            <img
+              src="./assets/images/cus_6.png"
+              alt="cus_6"
+              width="100%"
+            />
+            <span class="item-title">临港蓝湾天地</span>
+            <span class="item-tip">商业/综合体</span>
+          </div>
+          <div class="cus-item">
+            <img
+              src="./assets/images/cus_7.png"
+              alt="cus_7"
+              width="100%"
+            />
+            <span class="item-title">临港生命科技园</span>
+            <span class="item-tip">厂房/办公楼</span>
+          </div>
+          <div class="cus-item">
+            <img
+              src="./assets/images/cus_8.png"
+              alt="cus_8"
+              width="100%"
+            />
+            <span class="item-title">华住集团</span>
+            <span class="item-tip">酒店</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+      <div class="footer-tip">
+        <span>进一步了解 & 产品试用</span>
+        <span>请联系我们专员：</span>
+      </div>
+      <img
+        src="./assets/images/code.png"
+        alt="code"
+        width="100%"
+      />
+    </div>
+  </div>
+
+  <script src="./js/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+  <script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
+  <script>
+    (function(draftWidth, n) {
+      function getRem() {
+        var html = document.querySelector("html");
+        var w = document.body.clientWidth || document.documentElement.clientWidth;
+        console.info(w, "wwwwwwww");
+        var rem = (w / draftWidth) * n;
+        html.style.fontSize = rem + "px";
+      }
+      getRem();
+      window.addEventListener("resize", function() {
+        getRem();
+      });
+    })(1920, 100);
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var trigger = new ScrollTrigger({
+        addHeight: true
+      });
+    });
+  </script>
+  <script>
+    var playFlag = false;
+    $(document).ready(function(){
+      var videoWidth = $('#video').width();
+      var videoHeight = $('#video').height();
+      var player = videojs('myVideo', {
+        width: videoWidth,
+        height: videoHeight,
+        muted: true,
+        autoplay: true,
+        loop: true
+      }, function() {
+        console.info('good to go');
+        playFlag = true;
+        this.play();
+        $('.control-icon').addClass('pauseIcon').removeClass('playIcon');
+      });
+      $(window).scroll(function(){
+        var scrollTop = $(this).scrollTop();
+        if (scrollTop >= 68) {
+          $(".logo-content").addClass("logo-fixed");
+          $(".logo img").attr("src","./assets/icons/logo_s_black.svg");
+        } else {
+          $(".logo-content").removeClass("logo-fixed");
+          $(".logo img").attr("src","./assets/icons/logo_s.svg");
+        }
+
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+        var elemTop = $('#video').offset().top;
+        var elemBottom = elemTop + $('#video').height();
+        if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) {
+          console.info('video进入')
+          playFlag = true;
+          player.play();
+          $('.control-icon').addClass('pauseIcon').removeClass('playIcon');
+        } else {
+          console.info('video出去');
+          playFlag = false;
+          player.pause();
+          $('.control-icon').addClass('playIcon').removeClass('pauseIcon');
+        }
+      });
+
+      $('.control-icon').click(function() {
+        if (playFlag) {
+          // 正在播放，点击暂停
+          playFlag = false;
+          player.pause();
+          $(this).addClass('playIcon').removeClass('pauseIcon');
+        } else {
+          playFlag = true;
+          player.play();
+          $(this).addClass('pauseIcon').removeClass('playIcon');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,9 +1,0 @@
-@font-face {
-  font-family: "PingFang SC";
-  font-weight: 400;
-  font-style: normal;
-  font-display: auto;
-  unicode-range: U+000-5FF;
-  src: local("Roboto"),
-  url("/fonts/Roboto/ping-fang.ttf") format("ttf");
-}
