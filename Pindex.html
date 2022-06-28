@@ -555,7 +555,7 @@
     });
   </script>
 </body>
-<div id="layer-dialogContent">
+<div id="layer-dialogContent" style="display: none">
   <div class="dialog-form">
     <div class="layui-form-item">
       <label class="layui-form-label">项目类型：</label>
@@ -570,12 +570,12 @@
         </select>
       </div>
     </div>
-    <div class="layui-form-item">
+    <div class="layui-form-item" style="position: relative;">
       <label class="layui-form-label">建筑面积：</label>
-      <div class="layui-input-inline">
+      <div class="layui-input-block">
         <input type="text" name="text" placeholder="请输入" autocomplete="off" class="layui-input">
       </div>
-      <div class="layui-form-mid layui-word-aux">㎡</div>
+      <span class="word-aux">㎡</span>
     </div>
   </div>
   <div class="dialog-btn">开始测算</div>
