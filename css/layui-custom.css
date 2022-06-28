@@ -34,6 +34,9 @@
   width: 110px !important;
 }
 
+.layui-input-block select {
+  text-indent: 10px;
+}
 .layui-input-block select, .layui-input-block input {
   width: 2.69rem !important;
   height: 36px !important;
@@ -138,12 +141,12 @@
 }
 
 .tips-body {
-  margin-top: 0.18rem;
+  margin-top: 20px;
   font-size: 0.14rem;
   font-family: PingFang SC;
   font-weight: bold;
   color: #939393;
-  line-height: 0.18rem;
+  line-height: 18px;
 }
 
 .hide {

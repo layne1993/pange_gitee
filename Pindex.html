@@ -437,11 +437,68 @@
       />
     </div>
   </div>
+  <div id="layer-dialogContent" style="display: none">
+    <div class="dialog-form">
+      <div class="layui-form-item">
+        <label class="layui-form-label">项目类型：</label>
+        <div class="layui-input-block">
+          <select name="city" lay-verify="required">
+            <option value=""></option>
+            <option value="0">option0</option>
+            <option value="1">option1</option>
+            <option value="2">option2</option>
+            <option value="3">option3</option>
+            <option value="4">option4</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item" style="position: relative;">
+        <label class="layui-form-label">建筑面积：</label>
+        <div class="layui-input-block">
+          <input type="text" name="text" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+        <span class="word-aux">㎡</span>
+      </div>
+    </div>
+    <div class="dialog-btn">开始测算</div>
+    <div class="dialog-result">
+      <span class="result-tip">贵项目的SaaS服务费约为：&nbsp;&nbsp;</span>
+      <span class="result-count"></span>
+      <span class="result-unit">元/年*</span>
+      <span class="result-tip">≈ 元/平/天</span>
+    </div>
+    <div class="dialog-remark">
+      <span class="remark1">展开服务费备注</span>
+      <img src="./assets/icons/arr_down.svg" alt="arrow" />
+    </div>
+    <div class="dialog-line hide"></div>
+    <div class="dialog-tips hide">
+      <div class="tips-title">什么是SaaS平台？</div>
+      <div class="tips-body">	1.	Saas平台是运营saas软件的平台。SaaS提供商为企业搭建信息化所需要的所有网络基础设施及软件、硬件运作平台，并负责所有前期的实施、后期的维护等一系列服务，企业无需购买软硬件、建设机房、招聘IT人员，即可通过互联网使用信息系统。SaaS 是一种软件布局模型，其应用专为网络交付而设计，便于用户通过互联网托管、部署及接入。</div>
+    </div>
+  </div>
 
   <script src="./js/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
   <script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
   <script src="//unpkg.com/layui@2.6.8/dist/layui.js"></script>
+  <script>
+    function isMobile () {
+      var userAgenInfo = navigator.userAgent
+      var Agents = new Array('Android', 'iPhone', 'SymbianOS', 'iPad', 'iPod')
+      var flag = false
+      for (var v = 0; v < Agents.length; v++) {
+        if (userAgenInfo.indexOf(Agents[v]) > 0) {
+          flag = true
+          break
+        }
+      }
+      return flag
+    }
+    if (isMobile()) {
+      window.location.href = '/Mindex.html'
+    }
+  </script>
   <script>
     (function(draftWidth, n) {
       function getRem() {
@@ -555,44 +612,4 @@
     });
   </script>
 </body>
-<div id="layer-dialogContent" style="display: none">
-  <div class="dialog-form">
-    <div class="layui-form-item">
-      <label class="layui-form-label">项目类型：</label>
-      <div class="layui-input-block">
-        <select name="city" lay-verify="required">
-          <option value=""></option>
-          <option value="0">option0</option>
-          <option value="1">option1</option>
-          <option value="2">option2</option>
-          <option value="3">option3</option>
-          <option value="4">option4</option>
-        </select>
-      </div>
-    </div>
-    <div class="layui-form-item" style="position: relative;">
-      <label class="layui-form-label">建筑面积：</label>
-      <div class="layui-input-block">
-        <input type="text" name="text" placeholder="请输入" autocomplete="off" class="layui-input">
-      </div>
-      <span class="word-aux">㎡</span>
-    </div>
-  </div>
-  <div class="dialog-btn">开始测算</div>
-  <div class="dialog-result">
-    <span class="result-tip">贵项目的SaaS服务费约为：&nbsp;&nbsp;</span>
-    <span class="result-count"></span>
-    <span class="result-unit">元/年*</span>
-    <span class="result-tip">≈ 元/平/天</span>
-  </div>
-  <div class="dialog-remark">
-    <span class="remark1">展开服务费备注</span>
-    <img src="./assets/icons/arr_down.svg" alt="arrow" />
-  </div>
-  <div class="dialog-line hide"></div>
-  <div class="dialog-tips hide">
-    <div class="tips-title">什么是SaaS平台？</div>
-    <div class="tips-body">	1.	Saas平台是运营saas软件的平台。SaaS提供商为企业搭建信息化所需要的所有网络基础设施及软件、硬件运作平台，并负责所有前期的实施、后期的维护等一系列服务，企业无需购买软硬件、建设机房、招聘IT人员，即可通过互联网使用信息系统。SaaS 是一种软件布局模型，其应用专为网络交付而设计，便于用户通过互联网托管、部署及接入。</div>
-  </div>
-</div>
 </html>
