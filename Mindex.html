@@ -13,7 +13,7 @@
     crossorigin="anonymous"
   />
   <link rel="stylesheet" type="text/css" href="./css/reset.css" />
-  <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+  <!-- <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" /> -->
   <link rel="stylesheet" type="text/css" href="./css/demo.css" />
   <!--引入test.less文件 -->
   <link rel="stylesheet/less" type="text/css" href="./css/mobile.less" />
@@ -181,12 +181,12 @@
           <span>赋能数字物业</span>
         </p>
         <ul class="video-right">
-          <li>•&nbsp;建筑空间、设备、工单流程综合数字化</li>
-          <li>•&nbsp;物业管理全生命周期BIM可视化</li>
+          <li>•&nbsp;&nbsp;建筑空间、设备、工单流程综合数字化</li>
+          <li>•&nbsp;&nbsp;物业管理全生命周期BIM可视化</li>
         </ul>
       </div>
       <div class="video-wrap video_wrap1" id="video">
-        <video
+        <!-- <video
           id="myVideo"
           class="video-js vjs-default-skin"
           preload="auto"
@@ -199,6 +199,8 @@
           />
         </video>
         <span class="playIcon control-icon control-icon1"></span>
+        -->
+        <img src="./assets/video1.gif" width="100%" height="100%" />
       </div>
     </div>
     <div style="background-color: #F4F4F4">
@@ -210,15 +212,15 @@
             <span>楼宇智能化</span>
           </div>
           <ul class="video-right">
-            <li>•&nbsp;暖通、电梯、动⼒等主要系统智能监控</li>
-            <li>•&nbsp;
+            <li>•&nbsp;&nbsp;暖通、电梯、动⼒等主要系统智能监控</li>
+            <li>•&nbsp;&nbsp;
               <span>"所⻅即所得"</span>&nbsp;
               <span>确保项⽬安全稳定运营</span>
             </li>
           </ul>
         </div>
-        <div class="video-wrap video_wrap2" id="video">
-          <video
+        <div class="video-wrap video_wrap2" id="video" style="height: 5rem">
+          <!-- <video
             id="myVideo2"
             class="video-js vjs-default-skin"
             preload="auto"
@@ -230,7 +232,8 @@
               type="video/mp4"
             />
           </video>
-          <span class="playIcon control-icon control-icon2"></span>
+          <span class="playIcon control-icon control-icon2"></span> -->
+        <img src="./assets/video2.gif" width="100%" height="100%" />
         </div>
       </div>
     </div>
@@ -242,8 +245,8 @@
           <span>精准管控</span>
         </div>
         <ul class="wulian-right">
-          <li>•&nbsp;确保100%到达现场操作</li>
-          <li>•&nbsp;巡检/安保路线可视化</li>
+          <li>•&nbsp;&nbsp;确保100%到达现场操作</li>
+          <li>•&nbsp;&nbsp;巡检/安保路线可视化</li>
         </ul>
       </div>
       <div class="wulian-body">
@@ -252,32 +255,32 @@
         <div class="hand-right" data-scroll="toggle(.fromRightIn, .fromRightOut)"></div>
         <ul class="hand-text" data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
           <li>
-            •&nbsp;&nbsp;<span style="color: #00B777">低功耗</span>
+            •&nbsp;&nbsp;&nbsp;<span style="color: #00B777">低功耗</span>
             <span>, 电池耐⽤</span>
             <span style="color: #00B777">5年</span>
             <span>, IP67</span>
           </li>
           <li>
-            •&nbsp;&nbsp;<span style="color: #00B777">易安装</span>
+            •&nbsp;&nbsp;&nbsp;<span style="color: #00B777">易安装</span>
             <span>, 螺丝/背胶固定安装</span>
           </li>
         </ul>
       </div>
     </div>
-    <div class="fund-content" data-scroll="toggle(.fromTopIn, .fromTopOut)">
+    <div class="fund-content">
       <div class="fund-wrap">
-        <div class="fund-top">
+        <div class="fund-top" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
           <div class="fund-title">
             <span style="font-size: 0.52rem">⼈⼯智能</span>
             <span>•</span>
             <span>⼀⽬了然</span>
           </div>
           <ul class="fund-tip">
-            <li>•&nbsp;基于运营大数据，动态智能算法出报表</li>
-            <li>•&nbsp;根据需求自定义报表权限及类型</li>
+            <li>•&nbsp;&nbsp;基于运营大数据，动态智能算法出报表</li>
+            <li>•&nbsp;&nbsp;根据需求自定义报表权限及类型</li>
           </ul>
         </div>
-        <div class="fund-img"></div>
+        <div class="fund-img" data-scroll="toggle(.fromTopIn, .fromTopOut)"></div>
       </div>
     </div>
     <div class="yidong-container">
@@ -289,8 +292,8 @@
             <span>实时"掌"握</span>
           </div>
           <ul class="yidong-tip">
-            <li>•&nbsp;移动端 & 桌⾯ & ⼤屏同步监控展示</li>
-            <li>•&nbsp;实时推送各类操作流程进度&报警</li>
+            <li>•&nbsp;&nbsp;移动端 & 桌⾯ & ⼤屏同步监控展示</li>
+            <li>•&nbsp;&nbsp;实时推送各类操作流程进度&报警</li>
           </ul>
         </div>
         <div class="yidong-imgs">
@@ -606,7 +609,7 @@
 
   <script src="./js/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-  <script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
+  <!-- <script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script> -->
   <script src="//unpkg.com/layui@2.6.8/dist/layui.js"></script>
   <script>
     function isMobile () {
@@ -651,96 +654,96 @@
     var playFlag1 = false;
     var playFlag2 = false;
     $(document).ready(function(){
-      var videoWidth = $('#video').width();
-      var videoHeight = $('#video').height();
-      var player1 = videojs('myVideo', {
-        width: videoWidth,
-        height: videoHeight,
-        muted: true,
-        autoplay: true,
-        loop: true
-      }, function() {
-        console.info('good to go');
-        playFlag1 = true;
-        this.play();
-        $('.control-icon1').addClass('pauseIcon').removeClass('playIcon');
-      });
-      var player2 = videojs('myVideo2', {
-        width: videoWidth,
-        height: videoHeight,
-        muted: true,
-        autoplay: true,
-        loop: true
-      }, function() {
-        console.info('good to go2');
-        playFlag2 = true;
-        this.play();
-        $('.control-icon2').addClass('pauseIcon').removeClass('playIcon');
-      });
-      $(window).scroll(function(){
-        var scrollTop = $(this).scrollTop();
-        if (scrollTop >= 68) {
-          $(".logo-content").addClass("logo-fixed");
-          $(".logo img").attr("src","./assets/icons/logo_s_black.svg");
-        } else {
-          $(".logo-content").removeClass("logo-fixed");
-          $(".logo img").attr("src","./assets/icons/logo_s.svg");
-        }
+      // var videoWidth = $('#video').width();
+      // var videoHeight = $('#video').height();
+      // var player1 = videojs('myVideo', {
+      //   width: videoWidth,
+      //   height: videoHeight,
+      //   muted: true,
+      //   autoplay: true,
+      //   loop: true
+      // }, function() {
+      //   console.info('good to go');
+      //   playFlag1 = true;
+      //   this.play();
+      //   $('.control-icon1').addClass('pauseIcon').removeClass('playIcon');
+      // });
+      // var player2 = videojs('myVideo2', {
+      //   width: videoWidth,
+      //   height: videoHeight,
+      //   muted: true,
+      //   autoplay: true,
+      //   loop: true
+      // }, function() {
+      //   console.info('good to go2');
+      //   playFlag2 = true;
+      //   this.play();
+      //   $('.control-icon2').addClass('pauseIcon').removeClass('playIcon');
+      // });
+      // $(window).scroll(function(){
+      //   var scrollTop = $(this).scrollTop();
+      //   if (scrollTop >= 68) {
+      //     $(".logo-content").addClass("logo-fixed");
+      //     $(".logo img").attr("src","./assets/icons/logo_s_black.svg");
+      //   } else {
+      //     $(".logo-content").removeClass("logo-fixed");
+      //     $(".logo img").attr("src","./assets/icons/logo_s.svg");
+      //   }
 
-        var docViewTop = $(window).scrollTop();
-        var docViewBottom = docViewTop + $(window).height();
-        var elemTop1 = $('.video_wrap1').offset().top;
-        var elemBottom1 = elemTop1 + $('.video_wrap1').height();
-        if ((elemBottom1 <= docViewBottom) && (elemTop1 >= docViewTop)) {
-          console.info('video1进入')
-          playFlag1 = true;
-          player1.play();
-          $('.control-icon1').addClass('pauseIcon').removeClass('playIcon');
-        } else {
-          console.info('video1出去');
-          playFlag1 = false;
-          player1.pause();
-          $('.control-icon1').addClass('playIcon').removeClass('pauseIcon');
-        }
-        var elemTop2 = $('.video_wrap2').offset().top;
-        var elemBottom2 = elemTop2 + $('.video_wrap2').height();
-        if ((elemBottom2 <= docViewBottom) && (elemTop2 >= docViewTop)) {
-          console.info('video2进入')
-          playFlag2 = true;
-          player2.play();
-          $('.control-icon2').addClass('pauseIcon').removeClass('playIcon');
-        } else {
-          console.info('video2出去');
-          playFlag2 = false;
-          player2.pause();
-          $('.control-icon2').addClass('playIcon').removeClass('pauseIcon');
-        }
-      });
-      // 点击切换按钮
-      $('.control-icon1').click(function() {
-        if (playFlag1) {
-          // 正在播放，点击暂停
-          playFlag1 = false;
-          player1.pause();
-          $(this).addClass('playIcon').removeClass('pauseIcon');
-        } else {
-          playFlag1 = true;
-          player1.play();
-          $(this).addClass('pauseIcon').removeClass('playIcon');
-        }
-      });
-      $('.control-icon2').click(function() {
-        if (playFlag2) {
-          // 正在播放，点击暂停
-          playFlag2 = false;
-          player2.pause();
-          $(this).addClass('playIcon').removeClass('pauseIcon');
-        } else {
-          playFlag2 = true;
-          player2.play();
-          $(this).addClass('pauseIcon').removeClass('playIcon');
-        }
-      });
+      //   var docViewTop = $(window).scrollTop();
+      //   var docViewBottom = docViewTop + $(window).height();
+      //   var elemTop1 = $('.video_wrap1').offset().top;
+      //   var elemBottom1 = elemTop1 + $('.video_wrap1').height();
+      //   if ((elemBottom1 <= docViewBottom) && (elemTop1 >= docViewTop)) {
+      //     console.info('video1进入')
+      //     playFlag1 = true;
+      //     player1.play();
+      //     $('.control-icon1').addClass('pauseIcon').removeClass('playIcon');
+      //   } else {
+      //     console.info('video1出去');
+      //     playFlag1 = false;
+      //     player1.pause();
+      //     $('.control-icon1').addClass('playIcon').removeClass('pauseIcon');
+      //   }
+      //   var elemTop2 = $('.video_wrap2').offset().top;
+      //   var elemBottom2 = elemTop2 + $('.video_wrap2').height();
+      //   if ((elemBottom2 <= docViewBottom) && (elemTop2 >= docViewTop)) {
+      //     console.info('video2进入')
+      //     playFlag2 = true;
+      //     player2.play();
+      //     $('.control-icon2').addClass('pauseIcon').removeClass('playIcon');
+      //   } else {
+      //     console.info('video2出去');
+      //     playFlag2 = false;
+      //     player2.pause();
+      //     $('.control-icon2').addClass('playIcon').removeClass('pauseIcon');
+      //   }
+      // });
+      // // 点击切换按钮
+      // $('.control-icon1').click(function() {
+      //   if (playFlag1) {
+      //     // 正在播放，点击暂停
+      //     playFlag1 = false;
+      //     player1.pause();
+      //     $(this).addClass('playIcon').removeClass('pauseIcon');
+      //   } else {
+      //     playFlag1 = true;
+      //     player1.play();
+      //     $(this).addClass('pauseIcon').removeClass('playIcon');
+      //   }
+      // });
+      // $('.control-icon2').click(function() {
+      //   if (playFlag2) {
+      //     // 正在播放，点击暂停
+      //     playFlag2 = false;
+      //     player2.pause();
+      //     $(this).addClass('playIcon').removeClass('pauseIcon');
+      //   } else {
+      //     playFlag2 = true;
+      //     player2.play();
+      //     $(this).addClass('pauseIcon').removeClass('playIcon');
+      //   }
+      // });
       // 点击弹窗显示
       $(".card_bottom-bottom").click(function() {
         layer.open({
